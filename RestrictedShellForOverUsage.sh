@@ -25,7 +25,7 @@ while true; do
         if [[ $cmd_str == *"K"* ]]; then
          break;
         fi
-        size_x=$(du -hsc /home/"$(whoami)"|tail -1|cut -d '.' -f1)
+        size_x=$(du -hsc /home/"$(whoami)"|tail -1|awk '{print $1}'|tr -d 'G')
         if [ "$size_x" -lt 6 ]; then
         break;
         fi
