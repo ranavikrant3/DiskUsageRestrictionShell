@@ -57,7 +57,7 @@ while true; do
 	"q"|"e"|"exit"|"quit")
                         pattern="sshd: $EV_USER@$(tty| cut -d'/' -f3,4)"
                         pid=$(ps aux | grep "$pattern"| grep -v grep| awk '{print $2}')
-                        kill $pid
+                        kill -9 $$
 
         ;;  
 
